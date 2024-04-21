@@ -1,0 +1,13 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SmartDateControl">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/SmartDateControl;component/Themes/Units/DayOfWeek.xaml"/>
+        <ResourceDictionary Source="/SmartDateControl;component/Themes/Units/ChevronBUtton.xaml"/>
+        <ResourceDictionary Source="/SmartDateControl;component/Themes/Units/CalendarBoxItem.xaml"/>
+        <ResourceDictionary Source="/SmartDateControl;component/Themes/Units/CalendarBox.xaml"/>
+        <ResourceDictionary Source="/SmartDateControl;component/Themes/Units/CalendarSwitch.xaml"/>
+        <ResourceDictionary Source="/SmartDateControl;component/Themes/Units/SmartDate.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

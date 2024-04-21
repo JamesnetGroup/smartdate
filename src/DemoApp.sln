@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp", "DemoApp\DemoApp.csproj", "{76276CD9-7741-4F81-A1D9-DD9537730E46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDateControl", "SmartDateControl\SmartDateControl.csproj", "{D62AD56A-180C-4080-A52B-D38E254A899C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76276CD9-7741-4F81-A1D9-DD9537730E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76276CD9-7741-4F81-A1D9-DD9537730E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76276CD9-7741-4F81-A1D9-DD9537730E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76276CD9-7741-4F81-A1D9-DD9537730E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D62AD56A-180C-4080-A52B-D38E254A899C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D62AD56A-180C-4080-A52B-D38E254A899C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D62AD56A-180C-4080-A52B-D38E254A899C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D62AD56A-180C-4080-A52B-D38E254A899C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC5A800E-8E01-4867-98C9-EAC0DF0ED3E4}
+	EndGlobalSection
+EndGlobal
