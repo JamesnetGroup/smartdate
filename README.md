@@ -11,7 +11,6 @@
 - Ideas & Feedback
 
 <br/>
-![](https://jamesnetdev.blob.core.windows.net/articleimages/9ca4ff54-3ac2-4e2b-a336-26aacb0df457.png)
 
 ## Tutorial Introduction
 The WPF SmartDate tutorial is provided through videos and a GitHub repository with source code, and we strive to deliver detailed and extensive learning content and updates through Code Project, community channels, Facebook, and blogs.
