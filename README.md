@@ -72,3 +72,16 @@ So far, a total of five episodes in the tutorial series have been released.
 | 5 | WPF | Smart Date | :link:[Link](https://bit.ly/3xOeyMJ) | :link:[Link](https://bit.ly/3xI9DNh) |
 
 
+#### Preview of the Sixth Video
+
+The upcoming sixth tutorial video will focus on dependency injection and CustomControl, incorporating project decentralization to implement a small WPF framework application.
+
+## Contributor Introduction
+
+Vicky Guo and James Lee are a developer couple active in South Korea and China, respectively. They handle everything from topic selection, sample source code preparation, recording the application implementation process, English/Chinese dubbing, Korean subtitling, video editing, thumbnail creation, and video uploads. Since they are full-time developers, uploads can sometimes be delayed. However, they find joy and a sense of mission in their work, making it a pleasure to continue.
+
+## Ideas & Feedback
+
+We are always waiting for new tutorial topics, ideas, and feedback!
+
+james@jamesnet.dev
