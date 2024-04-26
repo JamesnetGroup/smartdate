@@ -49,6 +49,7 @@ A look at the main tasks shows that not only SmartDate but also its subordinate 
 
 Through this tutorial video, we hope you gain a detailed understanding of the implementation of CustomControl. If you need more preliminary study on the concept of Template, we recommend watching the RiotSlider tutorial video first.
 
+
 ## Communication and Support
 
 We keep various channels open for communication at any time.
@@ -56,8 +57,6 @@ We keep various channels open for communication at any time.
 - [GitHub](https://github.com/vickyqu115/smartdate): Follow, Fork, Stars
 - [YouTube](https://bit.ly/3xOeyMJ), [BiliBili](https://bit.ly/3xI9DNh): Like, Comment, Subscribe, Share
 - [Facebook](https://facebook.com/jamesnet214), Email: james@jamesnet.dev
-
-net.dev
 
 ## Original Tutorial Series
 So far, a total of five episodes in the tutorial series have been released.
