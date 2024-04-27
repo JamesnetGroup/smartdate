@@ -1,4 +1,4 @@
-## Content
+![2c06e4f6-8973-4466-84f5-2a6ea45bc3dc](https://github.com/vickyqu115/smartdate/assets/52397976/5e98133b-0684-4217-a2d4-7f39b4602072)## Content
 
 - Tutorial Introduction
 - Overview
@@ -10,9 +10,9 @@
 
 <br/>
 
-![](https://jamesnetdev.blob.core.windows.net/articleimages/ce6243e8-8152-47a8-9a44-456637d2ce70.png)
+![image](https://github.com/vickyqu115/smartdate/assets/52397976/43a6039b-b387-4bd2-8dcf-37702bf04c32)
 
-![](https://jamesnetdev.blob.core.windows.net/articleimages/cfbb53a0-c242-4512-a2bb-a5415ab24870.png)
+![2c06e4f6-8973-4466-84f5-2a6ea45bc3dc](https://github.com/vickyqu115/smartdate/assets/52397976/b848c8ef-b8ad-4925-bae0-f8ab142bf69a)
 
 ## Tutorial Introduction
 The WPF SmartDate tutorial is provided through videos and a GitHub repository with source code, and we strive to deliver detailed and extensive learning content and updates through Code Project, community channels, Facebook, and blogs.
