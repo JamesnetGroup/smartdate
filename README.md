@@ -1,4 +1,4 @@
-![2c06e4f6-8973-4466-84f5-2a6ea45bc3dc](https://github.com/vickyqu115/smartdate/assets/52397976/5e98133b-0684-4217-a2d4-7f39b4602072)## Content
+## Content
 
 - Tutorial Introduction
 - Overview
