@@ -528,5 +528,5 @@ Vicky Guo and James Lee are a developer couple active in South Korea and China, 
 ## Ideas & Feedback
 
 We are always waiting for new tutorial topics, ideas, and feedback!
-
+vickyqu115@gmail.com,
 james@jamesnet.dev
