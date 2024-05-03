@@ -504,7 +504,7 @@ We keep various channels open for communication at any time.
 
 - [GitHub](https://github.com/vickyqu115/smartdate): Follow, Fork, Stars
 - [YouTube](https://www.youtube.com/watch?v=oTtM5NNVCNc), [BiliBili](https://www.bilibili.com/video/BV1pE421L7c2): Like, Comment, Subscribe, Share
-- [Facebook](https://facebook.com/jamesnet214), Email: james@jamesnet.dev
+- [Facebook](https://facebook.com/jamesnet214), Email: vickyqu115@gmail.com, james@jamesnet.dev
 
 ## Original Tutorial Series
 So far, a total of five episodes in the tutorial series have been released.
