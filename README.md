@@ -10,8 +10,6 @@
 
 <br/>
 
-![image](https://github.com/vickyqu115/smartdate/assets/52397976/43a6039b-b387-4bd2-8dcf-37702bf04c32)
-
 ![2c06e4f6-8973-4466-84f5-2a6ea45bc3dc](https://github.com/vickyqu115/smartdate/assets/52397976/b848c8ef-b8ad-4925-bae0-f8ab142bf69a)
 
 ## Tutorial Introduction
