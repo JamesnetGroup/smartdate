@@ -12,6 +12,7 @@ A modern, customizable DatePicker control for WPF, reimagined from the ground up
 SmartDate is a custom WPF control that reimagines the traditional DatePicker. Built from scratch by inheriting from Control rather than the built-in DatePicker, it offers a modern, flexible, and easily customizable alternative. This project demonstrates advanced WPF techniques and control development practices.
 
 <img src="https://github.com/vickyqu115/smartdate/assets/52397976/b848c8ef-b8ad-4925-bae0-f8ab142bf69a" width="49%"/>
+<img src="https://github.com/user-attachments/assets/aef43667-102d-4889-afd4-bb318da43e83" width="49%"/>
 
 ## Key Features and Implementations
 #### 1. Ground-Up Custom Control Development
