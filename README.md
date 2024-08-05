@@ -1,116 +1,259 @@
-## Content
+# SmartDate [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md) [![한국어](https://img.shields.io/badge/Language-한국어-red.svg)](README.ko.md) [![中文](https://img.shields.io/badge/Language-中文-red.svg)](README.zh-CN.md)
 
-- Tutorial Introduction
-- Overview
-- WPF SmartDate
-- Contributor Introduction
-- Communication and Support
-- Tutorial Series
-- Ideas & Feedback
+A modern, customizable DatePicker control for WPF, reimagined from the ground up
 
-<br/>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/download)
+[![Stars](https://img.shields.io/github/stars/vickyqu115/smartdate.svg)](https://github.com/vickyqu115/smartdate/stargazers)
+[![Issues](https://img.shields.io/github/issues/vickyqu115/smartdate.svg)](https://github.com/vickyqu115/smartdate/issues)
 
-![2c06e4f6-8973-4466-84f5-2a6ea45bc3dc](https://github.com/vickyqu115/smartdate/assets/52397976/b848c8ef-b8ad-4925-bae0-f8ab142bf69a)
+## Project Overview
 
-## Tutorial Introduction
-The WPF SmartDate tutorial is provided through videos and a GitHub repository with source code, and we strive to deliver detailed and extensive learning content and updates through Code Project, community channels, Facebook, and blogs.
+SmartDate is a custom WPF control that reimagines the traditional DatePicker. Built from scratch by inheriting from Control rather than the built-in DatePicker, it offers a modern, flexible, and easily customizable alternative. This project demonstrates advanced WPF techniques and control development practices.
 
-- [YouTube](https://www.youtube.com/watch?v=oTtM5NNVCNc): English audio, Korean subtitles
-- [BiliBili](https://www.bilibili.com/video/BV1pE421L7c2): Chinese audio
-- [GitHub](https://github.com/vickyqu115/smartdate): Source code, includes README.md
-- [Code-Project](https://www.codeproject.com/search.aspx?q=vickyqu115&x=0&y=0&sbo=kw): Project review pending.
+<img src="https://github.com/vickyqu115/smartdate/assets/52397976/b848c8ef-b8ad-4925-bae0-f8ab142bf69a" width="49%"/>
 
-## Overview
+## Key Features and Implementations
+#### 1. Ground-Up Custom Control Development
+- [x] Built on Control class, bypassing the complexities of the standard DatePicker
+- [x] Efficient implementation of date selection functionality
+- [x] Modern design aligned with current UI/UX trends
 
-This video marks the fifth installment of the WPF tutorial series, starting with ThemeSwitch. We've mainly covered content derived from ContentControl and ItemsControl such as Buttons, Sliders, and ListBoxes. However, this time we delve into more complex functionalities like those in a DatePicker. Therefore, this series will be more challenging than previous ones.
+#### 2. Advanced WPF Techniques
+- [x] Use of PART_ naming convention for critical elements
+- [x] Custom ListBox (CalendarBox) with UniformGrid for calendar layout
+- [x] Popup control for dropdown calendar display
 
-But there's no need to worry. This tutorial video is prepared with care to ensure you can learn through repetition, with all processes, contents, and explanations arranged in an orderly fashion. Just repeat until you become familiar and proficient.
+#### 3. Primitives and Custom Controls Integration
+- [x] Custom ToggleButton (CalendarSwitch) for calendar activation
+- [x] ChevronButton for month navigation
+- [x] DayOfWeek control for weekday display
 
-## WPF SmartDate
+#### 4. Sophisticated Date Handling
+- [x] Efficient calendar generation algorithm
+- [x] Seamless month navigation and date selection
 
-For nearly 20 years since its inception, most controls derived from Template-including Control, ContentControl, and ItemsControl in WPF have been widely used without significant lack in classes, interfaces, and provided Dependency Property attributes. This shows how precisely WPF is designed. Especially, WPF's Template and hierarchy-focused design structure suit most controls like Buttons, ComboBoxes, and ListBoxes well.
+#### 5. MVVM-Friendly Design
+- [x] DependencyProperties for easy data binding (SelectedDate, CurrentMonth)
+- [x] Event-driven architecture for user interactions
 
-However, controls like DatePicker, which demand complex functionalities and detailed customization, have made us feel the limitations of the basic controls provided. In contrast to [Riot Slider](https://www.youtube.com/watch?v=jyv2fP9TUtY) from a previous tutorial, which featured a monotonous function and simple Template structure making it meaningful to analyze and customize the Template structure, DatePicker operates almost like a small application with various internal processes, making it a very challenging task to extract and analyze the basic Template structure. This will serve as an excellent training in WPF research and analysis.
+## Technical Deep Dive
+- **CustomControl Architecture**: Demonstrates building a complex control from Control class, avoiding the intricacies of DatePicker inheritance.
+- **PART_ Control Interaction**: Showcases the use of PART_ named elements for code-behind interactions, a key WPF pattern.
+- **ListBox Customization**: Implements a custom calendar using a modified ListBox with UniformGrid, demonstrating advanced ItemsPanel customization.
+- **Popup Management**: Illustrates efficient handling of Popup control for dropdown functionality.
+- **Date Logic**: Implements sophisticated date calculation and calendar generation algorithms.
 
-If you are looking to analyze and study the basic control setup of DatePicker, this is a great approach. Additionally, we recommend examining the SmartDate control method featured in this tutorial. The main processes and content of this video are as follows:
+## Technology Stack
+- WPF (Windows Presentation Foundation)
+- .NET 8.0
+- C# 10.0
+- XAML
 
-| Order | Main Task | Summary of Main Content |
-|:--:|:---|:---|
-| 1 | WPF Application | Creation of program entry structure and creation and execution of Application instance Run() |
-| 2 | WPF Class Library | Basic structure of CustomControl: AssemblyInfo.cs, Generic.xaml, CustomControl |
-| 3 | SmartDate | CustomControl derived from replacing the DatePicker |
-| 4 | CalendarSwitch | CustomControl derived from a ToggleButton that manages the popup switching of the SmartDate control |
-| 5 | Popup | Basic control encompassing the calendar |
-| 6 | CalendarBox | CustomControl derived from a ListBox displaying dates on the calendar, specifying ItemsPresenter's container as a UniformGrid via ItemsPanelTemplate, including moving buttons for the calendar in the ControlTemplate |
-| 7 | CalendarBoxItem | CustomControl derived from ListBoxItem which acts as the ItemsContainer for the CalendarBox |
-| 8 | ChevronButton | CustomControl derived from a Button that moves to the previous or next month |
-| 9 | DayOfWeek | CustomControl derived from a Label that displays the days of the week |
+## Getting Started
+### Prerequisites
+- Visual Studio 2022 or later
+- .NET 8.0 SDK
 
-A look at the main tasks shows that not only SmartDate but also its subordinate controls utilize CustomControl. This design provides a good example of the philosophy behind WPF's CustomControl design.
+### Installation and Execution
+#### 1. Clone the repository:
 
-Through this tutorial video, we hope you gain a detailed understanding of the implementation of CustomControl. If you need more preliminary study on the concept of Template, we recommend watching the RiotSlider tutorial video first.
-
-## SmartDate.xaml (Control)
-_SmartDateControl/Themes/Units/SmartDate.xaml_
-```xaml
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:james="https://jamesnet.dev/xaml/presentation"
-    xmlns:units="clr-namespace:SmartDateControl.UI.Units">
-
-    <Style TargetType="{x:Type TextBlock}" x:Key="MonthStyle">
-        <Setter Property="Text" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=CurrentMonth,StringFormat={}{0:yyyy.MM}}"/>
-        <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="FontSize" Value="13"/>
-        <Setter Property="Margin" Value="10 10 10 5"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-    </Style>
-    
-    <Style TargetType="{x:Type units:SmartDate}">
-        <Setter Property="Background" Value="#151515"/>
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:SmartDate}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
-                        <Grid>
-                            <units:CalendarSwitch x:Name="PART_Switch"/>
-                            <Popup x:Name="PART_Popup" StaysOpen="False" VerticalOffset="2" AllowsTransparency="True">
-                                <Border Background="{TemplateBinding Background}" CornerRadius="4" Padding="10">
-                                    <james:JamesGrid Rows="Auto,Auto,Auto" Columns="*">
-                                        <james:JamesGrid Rows="*" Columns="Auto,*,AUto">
-                                            <units:ChevronButton x:Name="PART_Left" Tag="Left"/>
-                                            <TextBlock Style="{StaticResource MonthStyle}"/>
-                                            <units:ChevronButton x:Name="PART_Right" Tag="Right"/>
-                                        </james:JamesGrid>
-                                        <UniformGrid Columns="7">
-                                            <units:DayOfWeek Grid.Column="0" Content="Su"/>
-                                            <units:DayOfWeek Grid.Column="1" Content="Mo"/>
-                                            <units:DayOfWeek Grid.Column="2" Content="Tu"/>
-                                            <units:DayOfWeek Grid.Column="3" Content="We"/>
-                                            <units:DayOfWeek Grid.Column="4" Content="Th"/>
-                                            <units:DayOfWeek Grid.Column="5" Content="Fr"/>
-                                            <units:DayOfWeek Grid.Column="6" Content="Sa"/>
-                                        </UniformGrid>
-                                        <units:CalendarBox x:Name="PART_ListBox"/>
-                                    </james:JamesGrid>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-</ResourceDictionary>
+```
+git clone https://github.com/vickyqu115/smartdate.git
 ```
 
-## SmartDate.cs
-_SmartDateControl.UI.Units.SmartDate_
+#### 2. Open the solution
+- [x] Visual Studio
+- [x] Visual Studio Code
+- [x] JetBrains Rider
+
+#### 3. Build and Run
+- [x] Set SmartDateApp as the startup project
+- [x] Press F5 or click the Run button
+- [x] Windows 11 recommended
+
+## Learning Resources
+- [Detailed Article on Implementation (jamesnet.dev)](https://jamesnet.dev/article/43)
+- [YouTube Tutorial (English)](https://bit.ly/4c8uGr3)
+- [BiliBili Tutorial (Chinese)](https://bit.ly/3xOeyMJ)
+- [CodeProject Article](https://bit.ly/4du4hVD)
+
+## Contributing
+Contributions to SmartDate are welcome! Feel free to submit issues, create pull requests, or suggest improvements.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+- Website: https://jamesnet.dev
+- Email: vickyqu115@hotmail.com, james@jamesnet.dev
+
+Explore advanced WPF control development techniques with SmartDate!
+
+----
+
+## Recognizing the Issues with the WPF DatePicker
+The WPF DatePicker is one of the core controls in WPF, with a history spanning nearly 20 years. Compared to simpler controls like Buttons, TextBoxes, or CheckBoxes, the DatePicker has a more complex structure and stages, composed of multiple controls. This complexity necessitates high expertise for customization, making it difficult to use or modify the provided outdated controls.
+
+## Understanding the WPF DatePicker
+Analyzing and understanding the structure of the DatePicker and the interaction of its internal elements within the Template is extremely beneficial for enhancing fundamental design and analysis skills in WPF. This applies to all WPF controls, not just the DatePicker. However, since the DatePicker was designed according to outdated trends, it might be more efficient to implement a new CustomControl based on the basic Control.
+
+## Source Code Download and Setup
+This article identifies issues with using the basic DatePicker and demonstrates how to redesign it using a CustomControl approach. It is also beneficial to download the source code via GitHub to check the results firsthand and read along with this article.
+
+First, download the source code using the following git command:
+```
+git clone https://github.com/vickyqu115/smartdate
+```
+
+Next, to run the solution file from the source code, you need an environment with Windows 10 or higher, Visual Studio 2022 or Rider, and .NET 8.0.
+
+_SmartDate.sln_
+
+<img src="https://jamesnetdev.blob.core.windows.net/articleimages/50f4296f-2792-4bdd-9af6-1cffd2f9f8f6.png" style="width: 300px"/>
+
+## Project Structure
+SmartDate consists of two projects:
+- SmartDateControl
+- SmartDateApp
+
+SmartDateControl is a CustomControl Library that includes the SmartDate class along with all other subordinate CustomControl classes. SmartDateApp is a simple application project that guides users on how to use this control.
+
+## Declaring and Using SmartDate
+The usage is straightforward. Declare the namespace with xmlns and use SmartDate just like the standard DatePicker.
+
+```xml
+<Window x:Class="SmartDateApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:smart="clr-namespace:SmartDateControl.UI.Units;assembly=SmartDateControl"
+        xmlns:theme="https://jamesnet.dev/xaml/presentation/themeswitch"
+        mc:Ignorable="d"
+        x:Name="Window"
+        Title="SmartDate" Height="450" Width="800" Background="#FFFFFF">
+    <Viewbox Width="500">
+        <UniformGrid Margin="20" Columns="1" VerticalAlignment="Top">
+            <smart:SmartDate SelectedDate="{Binding Created}"/>
+            <DatePicker SelectedDate="{Binding Created}"/>
+        </UniformGrid>
+    </Viewbox>
+</Window>
+```
+
+SelectedDate is a DependencyProperty and uses the same DateTime? type as DatePicker’s SelectedDate.
+
+_Execution Results_
+
+<img src="https://jamesnetdev.blob.core.windows.net/articleimages/fbfa4cd0-4b3b-426e-b894-b20473096e33.png" style="width: 300px; "/>
+
+## Definition and Utilization of CustomControl
+I have previously discussed the technology behind CustomControls in detail through four articles on CodeProject. If you need to understand and master CustomControls, please refer to these articles. Particularly, the article on RiotSlider delves deeply into the architecture of WPF CustomControls, so if you haven’t read it yet, I strongly recommend doing so.
+
+Returning to the main discussion, let’s define CustomControl. Typically, a CustomControl targets classes derived from Control, but in reality, it includes all classes derived from DependencyObject, not just those inheriting Control, such as Panels, up to Visuals like Animations. However, as mentioned earlier, it only makes sense to implement CustomControls in layers that can utilize Templates, or at least DataContext. Therefore, implementing classes derived from FrameworkElement in the CustomControl style is seen as wise.
+
+## Designing a New DatePicker: SmartDate
+This article will detail how to implement a new CustomControl called SmartDate, derived from the most basic class, Control, without using the existing DatePicker.
+
+## Choosing Control Over ContentControl
+First, let’s examine the differences between ContentControl and Control. ContentControl offers not just the basic Template but also properties for Content and ContentTemplate. These properties are automatically linked through the ContentPresenter, setting up the relationship between ContentPresenter, Content, and ContentTemplate automatically. Consequently, choosing a derived control based on the basic usage of DataTemplate is advisable.
+
+Is DatePicker fundamentally a control that utilizes DataTemplate? While opinions may vary, a complex control like DatePicker typically requires multiple DataTemplates and does not resemble a standard ContentControl. Indeed, DatePicker is derived from Control, and similar types of controls usually inherit from Control. For example, ComboBox might look similar to DatePicker but is an ItemsControl with an ItemsSource property.
+
+Therefore, it is appropriate to base the implementation of SmartDate on Control, especially since SmartDate does not provide its own DataTemplate.
+
+## Utilizing DataTemplate
+Though SmartDate does not provide a DataTemplate by default, there are many points within various areas of the control where extending through DataTemplate could be beneficial.
+
+For example, you can extend the ContentPresenter of the DayOfWeek control to add specific date processing, a common requirement among clients. This allows for various extensions such as triggers or converters for special dates.
+
+By extending the SelectedDate binding area to a ContentPresenter, you can flexibly use it for selecting dates, incorporating formats ranging from a simple TextBlock to an editable TextBox or even including time.
+
+## Negative Views on DataTemplate
+DataTemplate fundamentally maintains versatility even in complex situations and is an essential template area for customization. However, whether to apply this versatility to specific controls like date pickers should be carefully considered. Using a DataTemplate means that all related logic must be separated into interactively implementable components. While this may seem practical, it is crucial to make sound judgments.
+
+## Key Binding Properties of SmartDate (DependencyProperty)
+This control includes a binding property named SelectedDate of type DateTime?. Since the default value might be null, it is declared as a nullable type, used for setting the date value selected through the calendar.
+
+## SmartDate Template Design
+
+The essential components that must be included in the ControlTemplate design are as follows:
+
+- Popup
+- ListBox
+- ToggleButton
+
+The Popup acts as a panel to contain the ListBox, which is the calendar, and the ListBox uses an internal ItemsPanel to implement the calendar with a UniformGrid. The ToggleButton is used as the calendar icon, and toggling the button changes the IsOpen property of the Popup to control the calendar window. This setup is similar in the basic DatePicker control as well, making it very beneficial to compare it with the actual open-source code of DatePicker.
+
+Let’s now examine how the SmartDate control is structured in its Template.
+
+_SmartDate: ControlTemplate_
+
+```xml
+<ControlTemplate TargetType="{x:Type units:SmartDate}">
+    <Border Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
+        <Grid>
+            <units:CalendarSwitch x:Name="PART_Switch"/>
+            <Popup x:Name="PART_Popup" StaysOpen="False" ...>
+                <Border Background="{TemplateBinding Background}" ...>
+                    <james:JamesGrid Rows="Auto,Auto,Auto" Columns="*">
+                        <james:JamesGrid Rows="*" Columns="Auto,*,Auto">
+                            <units:ChevronButton x:Name="PART_Left" Tag="Left"/>
+                            <TextBlock Style="{StaticResource MonthStyle}"/>
+                            <units:ChevronButton x:Name="PART_Right" Tag="Right"/>
+                        </james:JamesGrid>
+                        <UniformGrid Columns="7">
+                            <units:DayOfWeek Grid.Column="0" Content="Su"/>
+                            <units:DayOfWeek Grid.Column="1" Content="Mo"/>
+                            <units:DayOfWeek Grid.Column="2" Content="Tu"/>
+                            <units:DayOfWeek Grid.Column="3" Content="We"/>
+                            <units:DayOfWeek Grid.Column="4" Content="Th"/>
+                            <units:DayOfWeek Grid.Column="5" Content="Fr"/>
+                            <units:DayOfWeek Grid.Column="6" Content="Sa"/>
+                        </UniformGrid>
+                        <units:CalendarBox x:Name="PART_ListBox"/>
+                    </james:JamesGrid>
+                </Border>
+            </Popup>
+        </Grid>
+    </Border>
+</ControlTemplate>
+```
+
+As you can see in the ControlTemplate, all previously mentioned components are included. The Popup is used as a basic control, and the CalendarSwitch is a calendar switching button that inherits from ToggleButton. Lastly, the CalendarBox, which inherits from ListBox, is used as the list control for selecting dates on the calendar.
+
+Moreover, other components included are buttons to navigate to the previous and next months, a TextBlock to display the current month, and design elements to display the days of the week.
+
+## CustomControl Not Intended for Reuse but for Internal Use Only
+The SmartDate control is not only used by itself but also employs CustomControls within its Template. Not all CustomControls are intended for universal control implementation. In cases like SmartDate, they are implemented for specific purposes, which is a common practice from the perspective of WPF architecture.
+
+Such types of controls are often categorized under the namespace 'Primitives.' This category includes controls like ToggleButton, Thumb, and ScrollBar, which are typically used not directly but within the internals of other controls.
+
+Based on these architectural facts about WPF, it can be seen that the structure of the SmartDate control's Template does not significantly differ from the basic patterns of WPF.
+
+## Understanding PART_ Control Items and Their Roles
+The CustomControl structure does not automatically connect code and XAML like UserControls do. Thus, all interactions between the two are exclusively managed by _PART controls.
+
+The predefined _PART controls include:
+- PART_Switch
+- PART_ListBox
+- PART_Left
+- PART_Right
+
+These are assigned during the override of the SmartDate class's OnApplyTemplate method, where all necessary processes such as button events and date generation are implemented. It's a good practice to name controls with the PART_ prefix when passed through OnApplyTemplate. Moreover, naming these elements in XAML in a way that allows developers to anticipate what processes occur within the class based on the PART_ name would be exemplary.
+
+## SmartDate.cs Source Code
+Next, we will examine the core implementation contained within the SmartDate.cs class file. Key areas to focus on include:
+- Declared DependencyProperty
+- Definition of PART_ elements via OnApplyTemplate
+- Date selection control logic through the SelectedDate property
+- Utilization of SelectedItem/SelectedValue in CalendarBox
+
+ _SmartDate: CustomControl_
+
 ```csharp
 ﻿using System;
 using System.Collections.Generic;
@@ -256,275 +399,29 @@ namespace SmartDateControl.UI.Units
 }
 ```
 
-## CalendarSwitch.xaml (ToggleButton)
-_SmartDateControl/Themes/Units/CalendarSwitch.xaml_
-```xaml
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:units="clr-namespace:SmartDateControl.UI.Units">
+Firstly, the DependencyProperty is scrutinized, including essential properties like SelectedDate, which maintains the selected date. The KeepPopupOpen property determines whether to keep the window open after a date selection, and the CurrentMonth property, a DateTime property unseen in standard DatePicker controls, retains the current month's position to facilitate navigation through calendar months.
 
-    <Geometry x:Key="CalendarGeometry">M9,10V12H7V10H9M13,10V12H11V10H13M17,10V12H15V10H17M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M9,14V16H7V14H9M13,14V16H11V14H13M17,14V16H15V14H17Z</Geometry>
-    <Geometry x:Key="CalendarSelectionGeometry">M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z</Geometry>
+The GenerateCalendar method incorporates logic to recreate the calendar based on the selected date. The Offset calculation part is noteworthy here. Current dates set the calendar display, and to include preview dates from the previous and next months, a simple but crucial calculation is required.
 
-    <Style TargetType="{x:Type Path}" x:Key="PathStyle">
-        <Setter Property="Data" Value="{StaticResource CalendarGeometry}"/>
-        <Setter Property="Fill" Value="#AAFFFFFF"/>
-        <Setter Property="Width" Value="16"/>
-        <Setter Property="Height" Value="16"/>
-        <Setter Property="Stretch" Value="Uniform"/>
-        <Setter Property="Margin" Value="0 0 6 0"/>
-    </Style>
-
-    <Style TargetType="{x:Type TextBlock}" x:Key="SelectedStyle">
-        <Setter Property="Text" Value="{Binding RelativeSource={RelativeSource AncestorType=units:SmartDate},Path=SelectedDate, StringFormat={}{0:yyyy-MM-dd}}"/>
-        <Setter Property="Foreground" Value="#AAFFFFFF"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="6 0 0 0"/>
-    </Style>
-    
-    <Style TargetType="{x:Type units:CalendarSwitch}">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:CalendarSwitch}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Style="{StaticResource SelectedStyle}"/>
-                            <Path x:Name="Path" Grid.Column="1" Style="{StaticResource PathStyle}"/>
-                        </Grid>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Path" Property="Data" Value="{StaticResource CalendarSelectionGeometry}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-</ResourceDictionary>
-```
-
-## CalendarBox.xaml (ListBox)
-_SmartDateControl/Thems/Units/CalendarBox.xaml_
-```xaml
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:james="https://jamesnet.dev/xaml/presentation"
-    xmlns:units="clr-namespace:SmartDateControl.UI.Units">
-
-    <Style TargetType="{x:Type units:CalendarBox}">
-        <Setter Property="SelectedValuePath" Value="DateFormat"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:CalendarBox}">
-                    <ItemsPresenter/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="ItemsPanel">
-            <Setter.Value>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="7"/>
-                </ItemsPanelTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-</ResourceDictionary>
-```
-
-## CalendarBoxItem.xaml (ListBoxItem)
-_SmartDateControl/Themes/Units/CalendarBoxItem.xaml_
-```xaml
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:units="clr-namespace:SmartDateControl.UI.Units">
-
-    <Style TargetType="{x:Type TextBlock}" x:Key="DayStyle">
-        <Setter Property="Text" Value="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Content,StringFormat={}{0}}"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-
-    <Style TargetType="{x:Type units:CalendarBoxItem}">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#666666"/>
-        <Setter Property="Width" Value="28"/>
-        <Setter Property="Height" Value="{Binding RelativeSource={RelativeSource Self},Path=ActualWidth}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:CalendarBoxItem}">
-                    <Grid Background="Transparent">
-                        <Border Background="{TemplateBinding Background}" Margin="4" CornerRadius="4"/>
-                        <TextBlock Style="{StaticResource DayStyle}"/>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsCurrentMonth" Value="True">
-                            <Setter Property="Foreground" Value="#FFFFFF"/>
-                        </Trigger>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#FFFFFF"/>
-                            <Setter Property="Foreground" Value="#000000"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-</ResourceDictionary>
-```
-
-## CalendarBoxItem.cs
-_SmartDateControl.UI.Units.CalendarBoxItem_
 ```csharp
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+DateTime fDayOfMonth = new(current.Year,current.Month,1);
+DateTime lDayOfMonth = fDayOfMonth.AddMonths(1).AddDays(-1);
 
-namespace SmartDateControl.UI.Units
-{
-    public class CalendarBoxItem : ListBoxItem
-    {
-        public string DateFormat { get; set; }
+int fOffset = (int)fDayOfMonth.DayOfWeek;
+int lOffset = 6 - (int)lDayOfMonth.DayOfWeek;
 
-        public DateTime Date;
-        public bool IsCurrentMonth
-        {
-            get { return (bool)GetValue(IsCurrentMonthProperty); }
-            set { SetValue(IsCurrentMonthProperty, value); }
-        }
-
-        public static readonly DependencyProperty IsCurrentMonthProperty =
-            DependencyProperty.Register("IsCurrentMonth", typeof(bool), typeof(CalendarBoxItem), new PropertyMetadata(false));
-
-
-        static CalendarBoxItem()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(CalendarBoxItem), new FrameworkPropertyMetadata(typeof(CalendarBoxItem)));
-        }
-    }
-}
+DateTime fDay = fDayOfMonth.AddDays(-fOffset);
+DateTime lDay = lDayOfMonth.AddDays(lOffset);
 ```
 
-## ChevronButton.xaml (ToggleButton)
-_SmartDateControl/Themes/Units/ChevronButon.xaml_
-```xaml
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:james="https://jamesnet.dev/xaml/presentation"
-    xmlns:units="clr-namespace:SmartDateControl.UI.Units">
+In terms of event handling, the calendar selection event utilizes MouseLeftButtonUp to align with typical button click behaviors. It’s apt because SelectionChanged events do not trigger if the selected value is chosen again, making it unsuitable in this context.
 
-    <Geometry x:Key="ChevronLeftGeometry">M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z</Geometry>
-    <Geometry x:Key="ChevronRightGeometry">M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z</Geometry>
+The interaction between the ToggleButton's IsChecked state, Popup's IsOpen, and Close functionalities are all implemented via events, providing a comprehensive interaction mechanism that is beneficial to learn through direct implementation.
 
-    <Style TargetType="{x:Type units:ChevronButton}">
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#11FFFFFF"/>
-        <Setter Property="Margin" Value="10 10 10 5"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:ChevronButton}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <Path x:Name="Path" Fill="{TemplateBinding Foreground}" Width="12" Height="12" Stretch="Uniform"/>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="Tag" Value="Left">
-                            <Setter TargetName="Path" Property="Data" Value="{StaticResource ChevronLeftGeometry}"/>
-                        </Trigger>
-                        <Trigger Property="Tag" Value="Right">
-                            <Setter TargetName="Path" Property="Data" Value="{StaticResource ChevronRightGeometry}"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Foreground" Value="#FFFFFF"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-</ResourceDictionary>
-```
+## Additional Implementations
+This application, crafted for tutorial purposes, allows for further functional expansions such as time selection or manual value adjustments. Implementing a calendar display tailored to specific customer requirements is also feasible within this framework.
 
-## DayOfWeek.xaml (Label)
-_SmartDateControl.UI.Units.DayOfWeek_
-```xaml
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:units="clr-namespace:SmartDateControl.UI.Units">
+## Introduction to SmartDate Implementation Tutorials and Source Code
+The entire process of implementing the SmartDate control is available in tutorial videos on [YouTube](https://bit.ly/3xOeyMJ) and [Bilibili](https://bit.ly/3xI9DNh) and can be inspected on [GitHub](https://github.com/vickyqu115/smartdate). The videos, just over 50 minutes long, were developed over two months while balancing other professional duties, making them high-quality educational resources available for free. It's recommended to approach these tutorials with ample time and patience to ensure thorough learning.
 
-    <Style TargetType="{x:Type units:DayOfWeek}">
-        <Setter Property="FontSize" Value="11"/>
-        <Setter Property="FontWeight" Value="Regular"/>
-        <Setter Property="Foreground" Value="#999999"/>
-        <Setter Property="Width" Value="28"/>
-        <Setter Property="Height" Value="{Binding RelativeSource={RelativeSource Self},Path=ActualWidth}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type units:DayOfWeek}">
-                    <Border Background="{TemplateBinding Background}">
-                        <TextBlock Text="{TemplateBinding Content}" TextAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-</ResourceDictionary>
-```
-
-## Communication and Support
-
-We keep various channels open for communication at any time.
-
-- [GitHub](https://github.com/vickyqu115/smartdate): Follow, Fork, Stars
-- [YouTube](https://www.youtube.com/watch?v=oTtM5NNVCNc), [BiliBili](https://www.bilibili.com/video/BV1pE421L7c2): Like, Comment, Subscribe, Share
-- [Facebook](https://facebook.com/jamesnet214), Email: vickyqu115@gmail.com, james@jamesnet.dev
-
-## Original Tutorial Series
-So far, a total of five episodes in the tutorial series have been released.
-
-| No. | Platform | Title | YouTube | BiliBili |
-|:---:|:----|:------|:-----:|:------:|
-| 1 | WPF | Theme Switch | :link:[Link](https://www.youtube.com/watch?v=rGox76Bm6VY) | :link:[Link](https://www.bilibili.com/video/BV1ez4y1N7B8) |
-| 2 | WPF | Riot PlayButton | :link:[Link](https://www.youtube.com/watch?v=xgUqDavCJGg) | :link:[Link](https://www.bilibili.com/video/BV1Tu4y1j7Ei) |
-| 3 | WPF | Magic Navigation Bar | :link:[Link](https://www.youtube.com/watch?v=dxuLWlukthg) | :link:[Link](https://www.bilibili.com/video/BV1Ui4y1a717) |
-| 4 | WPF | Riot Slider | :link:[Link](https://www.youtube.com/watch?v=jyv2fP9TUtY) | :link:[Link](https://www.bilibili.com/video/BV1uy421a7yM) |
-| 5 | WPF | Smart Date | :link:[Link](https://www.youtube.com/watch?v=oTtM5NNVCNc) | :link:[Link](https://www.bilibili.com/video/BV1pE421L7c2) |
-
-#### Preview of the Sixth Video
-
-The upcoming sixth tutorial video will focus on dependency injection and CustomControl, incorporating project decentralization to implement a small WPF framework application.
-
-## Contributor Introduction
-
-Vicky Guo and James Lee are a developer couple active in South Korea and China, respectively. They handle everything from topic selection, sample source code preparation, recording the application implementation process, English/Chinese dubbing, Korean subtitling, video editing, thumbnail creation, and video uploads. Since they are full-time developers, uploads can sometimes be delayed. However, they find joy and a sense of mission in their work, making it a pleasure to continue.
-
-## Ideas & Feedback
-
-We are always waiting for new tutorial topics, ideas, and feedback!
-vickyqu115@gmail.com,
-james@jamesnet.dev
+Should you have any questions regarding WPF or related studies, feel free to engage in discussion. Our community is eager to assist in your exploration.
